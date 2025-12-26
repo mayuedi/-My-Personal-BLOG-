@@ -1,0 +1,65 @@
+<svg fill="none" viewBox="0 0 800 300" width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        /* 进场动画：像电视机关机后的开机效果 */
+        @keyframes turnOn {
+          0% { transform: scale(1, 0.002); opacity: 0; }
+          50% { transform: scale(1, 0.002); opacity: 1; }
+          100% { transform: scale(1, 1); opacity: 1; }
+        }
+        /* 漂浮动画 */
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        .container {
+          width: 100%; height: 300px;
+          background: #fff;
+          border: 4px solid #000;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'Arial Black', sans-serif;
+          position: relative;
+          overflow: hidden;
+          animation: turnOn 0.4s ease-out forwards;
+        }
+
+        /* 装饰元素 */
+        .shape-1 {
+          position: absolute; right: -50px; top: -50px;
+          width: 200px; height: 200px;
+          background: #FF005C; border: 4px solid #000;
+          animation: float 4s infinite ease-in-out;
+        }
+        .shape-2 {
+          position: absolute; left: 50px; bottom: 20px;
+          width: 80px; height: 80px;
+          background: #FAFF00; border: 4px solid #000;
+          border-radius: 50%;
+          animation: float 3s infinite ease-in-out reverse;
+        }
+
+        .text-box {
+          z-index: 10; text-align: center;
+          background: #fff; padding: 20px;
+          border: 4px solid #000;
+          box-shadow: 8px 8px 0px #00F0FF;
+        }
+        h1 { margin: 0; font-size: 40px; color: #000; }
+        p { margin: 5px 0 0; font-size: 16px; color: #666; font-weight: bold; }
+      </style>
+
+      <div class="container">
+        <div class="shape-1"></div>
+        <div class="shape-2"></div>
+        <div class="text-box">
+          <h1>HELLO WORLD</h1>
+          <p>Welcome to my creative space</p>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
